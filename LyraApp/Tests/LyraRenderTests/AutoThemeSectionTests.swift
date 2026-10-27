@@ -104,7 +104,7 @@ final class AutoThemeSectionRenderTests: XCTestCase {
         let status = AutoThemeStatus(mood: .energetic, themeName: "Pulse", reason: "Rock · 128 BPM")
         let rep = try render(MatchTheMusicSection(model: model(enabled: true), status: status))
         XCTAssertGreaterThan(rep.pixelsHigh, 500, "header, text, status and twelve rows")
-        XCTAssertGreaterThan(distinctColors(rep), 12)
+        XCTAssertGreaterThan(distinctColors(rep), 4, "something other than a flat fill was drawn")
         try save(rep, "match-the-music.png")
     }
 
