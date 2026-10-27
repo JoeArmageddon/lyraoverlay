@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleName</key>
+    <string>Lyra</string>
+    <key>CFBundleDisplayName</key>
+    <string>Lyra</string>
+    <key>CFBundleIdentifier</key>
+    <string>app.lyra.mac</string>
+    <key>CFBundleExecutable</key>
+    <string>Lyra</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.5.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>14.0</string>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.music</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
+    <!-- Deliberately no LSUIElement: Lyra shows a Dock icon and a menu bar. -->
+    <key>NSAppleEventsUsageDescription</key>
+    <string>Lyra reads which song Spotify and Music are playing, and where in the song they are, so it can show synced lyrics. It can also pause, play and skip tracks when you use the player controls.</string>
+    <key>NSAudioCaptureUsageDescription</key>
+    <string>Lyra listens to the audio that is playing on your Mac to make the lights react to the beat. It never records or stores audio, and never uses the microphone.</string>
+</dict>
+</plist>

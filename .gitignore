@@ -1,0 +1,27 @@
+# Build output
+.build/
+.swiftpm/
+dist/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# macOS
+.DS_Store
+
+# Logs and scratch files written by the debugging flags and spikes
+*.log
+overlay-spike.log
+overlay-variants.log
+
+# Python bytecode from the font build scripts in Fonts/drawn
+__pycache__/
+*.pyc
+
+# Half-written fonts left behind by interrupted font builds
+*.tmp
+*.tmp.ttf
+
+# Local editor and tool state
+.idea/
+.vscode/

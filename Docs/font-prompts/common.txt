@@ -1,0 +1,38 @@
+You are an expert type designer. Design one ORIGINAL display typeface for use as large on-screen song lyrics in a Mac app called Lyra. The text is shown at 40 to 140 pt over video and photos, usually with a soft glow, and is also read at about 28 pt as a "next line" preview. I need REAL FONT FILES, not pictures of letters.
+
+DELIVERABLES
+1. One TrueType font file (.ttf; OpenType with CFF outlines, .otf, is also fine), a single weight called Regular, that macOS Font Book installs without warnings.
+2. A specimen PNG showing the full character set, the pangrams below, and the test lines at 36 pt and 96 pt, light text on a dark background.
+3. A short README with the license text and a list of anything you were unable to do.
+If you cannot produce a binary font file directly, produce instead: (a) one JSON file mapping each character to its SVG path data and advance width, drawn on a 1000-unit em grid with the baseline at y = 0 and y pointing up; and (b) a ready-to-run Python script using the fontTools library that builds the .ttf from that JSON, plus the exact commands to run it on a Mac.
+
+NAMING
+Family "Lyra {NAME}", style "Regular", PostScript name "Lyra{NAMENOSPACE}-Regular", file name "Lyra{NAMENOSPACE}-Regular.ttf". Put the name, copyright and license in the name table.
+
+METRICS
+unitsPerEm 1000. Ascender 800, descender -200, capHeight 700, xHeight 500 (a caps-style design may use small caps for lowercase, but lowercase letters must exist), lineGap 0. Make hhea, OS/2 typo and OS/2 win metrics agree (winAscent 900, winDescent 250, USE_TYPO_METRICS set) so lines neither clip nor shift between apps.
+
+CHARACTER SET (all required)
+A-Z a-z 0-9 and the space; punctuation . , ! ? ' " ‘ ’ “ ” - – — : ; & ( ) / \ # @ % + = $ * … _ ~ ^ < > [ ] { } | ` ¡ ¿
+Latin accents: À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï Ñ Ò Ó Ô Õ Ö Ø Ù Ú Û Ü Ý à á â ã ä å æ ç è é ê ë ì í î ï ñ ò ó ô õ ö ø ù ú û ü ý ÿ ß
+
+QUALITY BAR
+- Legible when large and at 28 pt. Consistent stroke weight, rhythm and spacing; hand-tuned sidebearings.
+- Kern or space problem pairs so they never collide (A V, T o, L T, r a, f i, y o, W a, P .). Kerning in a GPOS "kern" feature is welcome.
+- Unambiguous look-alikes: O vs 0, I vs l vs 1, S vs 5, B vs 8, rn vs m.
+- Clean outlines: merge overlapping shapes, no self-intersections, no tiny gaps or slivers, points at extrema, correct contour direction for TrueType (outer contours clockwise, counters counter-clockwise), quadratic curves for .ttf.
+- Everything must render identically in macOS Core Text, Font Book, Safari and a PDF export.
+
+ORIGINALITY AND LICENSE
+Wholly original: do not trace, copy or derive from any existing typeface, logo or lettering, and do not imitate a specific commercial font. License: SIL Open Font License 1.1.
+
+TEST TEXT (show in the specimen at 36 pt and 96 pt)
+"Midnight in the city lights"
+"HOLD ME CLOSER, TONIGHT!"
+"Quick zephyrs blow, vexing daft Jim. 0123456789"
+"Can't stop (won't stop) - 100% yours & mine?"
+
+PROCESS
+First write a short design spec: the construction rules for the shapes, the weight, the contrast, and the personality. Then build the font. Then check your own work against the quality bar above and tell me honestly which glyphs or pairs are weak, and fix them before giving me the files.
+
+THE STYLE

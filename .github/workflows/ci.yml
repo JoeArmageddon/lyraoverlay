@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: Build and test
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Toolchain
+        run: |
+          swift --version
+          xcodebuild -version
+
+      - name: LyraCore tests
+        run: swift test --package-path LyraCore
+
+      # The render tests draw with Metal. Hosted runners are virtual machines and may not expose a
+      # GPU; those tests skip themselves when there is no Metal device.
+      - name: LyraApp tests
+        run: swift test --package-path LyraApp
+
+      - name: FontFactory tests
+        run: swift test --package-path Tools/FontFactory
+
+      - name: Build the app bundle
+        run: Scripts/make-app.sh
+
+      - name: Upload the app
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lyra.app
+          path: dist/Lyra.app
